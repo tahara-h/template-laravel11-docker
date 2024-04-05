@@ -1,0 +1,52 @@
+# Laravelのvendorディレクトリを無視
+laravel/vendor
+
+# PHPUnitのキャッシュを無視
+laravel/.phpunit.cache
+laravel/.phpunit.result.cache
+
+# Node.jsのモジュールを無視
+laravel/node_modules
+
+# Laravel Mixのビルドディレクトリを無視
+laravel/public/build
+
+# Laravel Mixのホットディレクトリを無視
+laravel/public/hot
+
+# Laravelのpublic/storageディレクトリを無視
+laravel/public/storage
+
+# Laravelのストレージ暗号鍵を無視
+laravel/storage/*.key
+
+# Laravelの.envファイル（リポジトリにはコミットしないでください）
+laravel/.env
+laravel/.env.backup
+laravel/.env.production
+
+# Laravel Homesteadの設定ファイルを無視
+laravel/Homestead.json
+laravel/Homestead.yaml
+
+# Laravelのauth.jsonファイルを無視
+laravel/auth.json
+
+# npmのデバッグログを無視
+laravel/npm-debug.log
+
+# Yarnのエラーログを無視
+laravel/yarn-error.log
+
+# Fleetの構成を無視
+laravel/.fleet
+
+# IDEやエディターの特定のファイルを無視
+laravel/.idea
+laravel/.vscode
+
+# Laravelの.gitignoreファイル自体を無視
+laravel/.gitignore
+
+# Docker MySQLのdbを無視
+docker/db
