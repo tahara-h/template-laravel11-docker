@@ -3,13 +3,14 @@
 Laravel11の実行環境をDockerのコンテナ内に作成するテンプレートリポジトリです。
 
 ## 構築する内容
-nginxコンテナ
-・nginx
-appコンテナ
-・php8.2
-・composer
-dbコンテナ
-・mySQL5.7
+
+- nginxコンテナ
+- ・nginx
+- appコンテナ
+- ・php8.2
+- ・composer
+- dbコンテナ
+- ・mySQL5.7
 
 ## 親環境に必要なツール類
 
