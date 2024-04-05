@@ -21,7 +21,7 @@ laravel/public/storage
 laravel/storage/*.key
 
 # Laravelの.envファイル（リポジトリにはコミットしないでください）
-laravel/.env
+# laravel/.env ※テンプレートのためnevも使用
 laravel/.env.backup
 laravel/.env.production
 
