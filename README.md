@@ -5,12 +5,12 @@ Laravel11の実行環境をDockerのコンテナ内に作成するテンプレ�
 ## 構築する内容
 
 - nginxコンテナ
-- ・nginx
+  - nginx
 - appコンテナ
-- ・php8.2
-- ・composer
+  - php8.2
+  - composer
 - dbコンテナ
-- ・mySQL5.7
+  - mySQL5.7
 
 ## 親環境に必要なツール類
 
@@ -20,8 +20,9 @@ Laravel11の実行環境をDockerのコンテナ内に作成するテンプレ�
 - VSCode (任意)
 - SQLクライアント (任意 「A5:SQL Mk-2」、「DBeaver」等)
 
-## 構築手順
+※各種必要に最初にインストールしておいてください。
 
+## 構築手順
 ### 1.任意のディレクトリに今回のプロジェクトディレクトリをcloneする
 
 ```bash
@@ -29,52 +30,34 @@ Laravel11の実行環境をDockerのコンテナ内に作成するテンプレ�
 git clone https://github.com/tahara-h/template-laravel11-docker.git
 ```
 
-#### 2.リポジトリ作成
-
-
-
-### 構築する環境
-
-- Webコンテナ
-  - [php:8.1.14-apache](https://hub.docker.com/_/php)
-  - [composer:2.5.1](https://hub.docker.com/_/composer)
-- DBコンテナ
-  - [mysql:8.0.31](https://hub.docker.com/_/mysql)
-- phpMyAdminコンテナ
-  - [phpmyadmin:5.2.0](https://hub.docker.com/_/phpmyadmin)
-
-### .env
-
-[.env](./.env)ファイルはDockerの環境ファイルです。  
-各名称・ポート設定をしてください。  
-基本的にはそのまま使用可能ですが、IPとポートが重複するとコンテナが起動しないので  
-自身の環境に合わせて設定を変えてください。
-
-### compose
-
-以下のコマンドを実行します。
+#### 2.compose
+必要なものを以下のコマンドを実行し展開します。
 
 ```bash
-# ターミナルで実行
-## ls コマンドで docker-compose.yml があるか確認
-ls docker-compose.yml
-## docker-compose で環境構築  ※ 時間がかかるので注意
+# ターミナルで実行(docker-compose.ymlファイルがある場所で実行)
 docker-compose up -d
 ```
 
 上記コマンドでエラーがなければ環境構築が完了しています。
 
-### Laravel
+### Laravelの導入
 
-Laravel関連のコマンドはDockerで用意した、WEBサーバー（コンテナ）上で行います。
+構築した環境内にコマンドで入ります。
 
 ```bash
 # ターミナルで実行
-## WEBサーバーに入るコマンド（-itの後に入る名称はコンテナ名「{NAME_PREFIX}-web」）
-docker exec -it laravel9-web bash
+docker exec -it app bash
 ```
 
-VSCodeの[Docker拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)が入っている場合、対象コンテナの「Attach Shell」でも開けます。  
+無事は入れたら下記のような表示になります。
+root@20cebe499322:/var/www# 
+
+ディレクトリを移動しcomposer.jsonがある位置に移動します。
+
+```bash
+# ターミナルで実行
+cd　./laravel
+```
 
 #### composer install
 
